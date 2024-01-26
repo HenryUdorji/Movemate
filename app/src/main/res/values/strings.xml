@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Movemate</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_home">Home</string>
+    <string name="calculate">Calculate</string>
+    <string name="shipment">Shipment</string>
+    <string name="profile">Profile</string>
+    <string name="profile_image">profile_image</string>
+    <string name="your_location">Your location</string>
+    <string name="enter_the_receipt_number">Enter the receipt number...</string>
+    <string name="tracking">Tracking</string>
+    <string name="shipment_number">Shipment Number</string>
+    <string name="sender">Sender</string>
+    <string name="time">Time</string>
+    <string name="receiver">Receiver</string>
+    <string name="status">Status</string>
+    <string name="add_shop">Add Shop</string>
+    <string name="available_vehicles">Available Vehicles</string>
+</resources>

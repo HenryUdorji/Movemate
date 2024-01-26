@@ -1,0 +1,10 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Movemate" parent="Theme.MaterialComponents.NoActionBar">
+        <!-- Customize your light theme here. -->
+         <item name="colorPrimary">@color/primary_color</item>
+        <item name="android:statusBarColor">@color/primary_color</item>
+    </style>
+
+    <style name="Theme.Movemate" parent="Base.Theme.Movemate" />
+</resources>
