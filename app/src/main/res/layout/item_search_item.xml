@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginBottom="20dp"
+    android:background="@color/white">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cv_profile"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:cardBackgroundColor="@color/primary_color"
+        app:cardCornerRadius="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/profile_image"
+            android:src="@drawable/empty_box" />
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:text="Summer linen jacket"
+        android:fontFamily="@font/nunito_sans_medium"
+        android:textSize="16sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toEndOf="@id/cv_profile"
+        app:layout_constraintTop_toTopOf="@id/cv_profile"
+        />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="5dp"
+        android:drawableEnd="@drawable/gray_indicator"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/nunito_sans_regular"
+        android:textColor="@color/text_color_gray"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cv_profile"
+        app:layout_constraintStart_toEndOf="@id/cv_profile"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"
+        tools:text="#NEJ2006758585994" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_location_first"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:drawableEnd="@drawable/baseline_east_24"
+        android:drawablePadding="5dp"
+        android:fontFamily="@font/nunito_sans_regular"
+        android:textColor="@color/text_color_gray"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cv_profile"
+        app:layout_constraintStart_toEndOf="@id/tv_number"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"
+        tools:text="Barcelona" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_location_second"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:fontFamily="@font/nunito_sans_regular"
+        android:textColor="@color/text_color_gray"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/cv_profile"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_location_first"
+        app:layout_constraintTop_toBottomOf="@id/tv_name"
+        tools:text="Paris" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="15dp"
+        android:background="@color/background_color"
+        app:layout_constraintTop_toBottomOf="@id/tv_number"
+        tools:layout_editor_absoluteX="10dp" />
+</androidx.constraintlayout.widget.ConstraintLayout>

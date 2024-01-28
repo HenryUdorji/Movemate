@@ -7,4 +7,9 @@
     <color name="background_color">#FAF9FA</color>
     <color name="text_color_gray">#C6C4C6</color>
     <color name="color_green">#13A500</color>
+    <color name="tab_unselected_color">#9A87CC</color>
+    <color name="color_red">#ED1C25</color>
+    <color name="color_blue">#673AB7</color>
+    <color name="color_gray">#F8F6F8</color>
+    <color name="chip_checked_color">#010001</color>
 </resources>

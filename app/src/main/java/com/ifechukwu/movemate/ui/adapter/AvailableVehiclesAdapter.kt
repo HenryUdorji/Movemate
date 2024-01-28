@@ -2,7 +2,9 @@ package com.ifechukwu.movemate.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import androidx.recyclerview.widget.RecyclerView
+import com.ifechukwu.movemate.R
 import com.ifechukwu.movemate.data.Vehicle
 import com.ifechukwu.movemate.databinding.ItemVehicleBinding
 
@@ -24,6 +26,9 @@ class AvailableVehiclesAdapter(private val availableVehicles: List<Vehicle>): Re
             binding.tvVehicleTitle.text = vehicle.name
             binding.tvVehicleSubtitle.text = vehicle.type
             binding.ivImage.setImageResource(vehicle.icon)
+
+            binding.ivImage.startAnimation(AnimationUtils.loadAnimation(binding.root.context, R.anim.slide_in_right))
+            binding.root.startAnimation(AnimationUtils.loadAnimation(binding.root.context, R.anim.slide_in_right_400))
         }
     }
 }

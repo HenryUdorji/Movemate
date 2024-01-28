@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.StatusFragment"
+        android:background="@color/background_color">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/nunito_sans_black_italic"
+            android:text="MoveMate"
+            android:textColor="@color/primary_color"
+            android:textSize="35sp"
+            android:drawableEnd="@drawable/ic_delivery_truck"
+            android:drawablePadding="8dp"
+            android:layout_marginTop="70dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_parcel"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            app:srcCompat="@drawable/parcel"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_logo"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_total_estimated"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/total_estimated_amount"
+            android:textColor="@color/black"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:fontFamily="@font/nunito_sans_medium"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="40dp"
+            app:layout_constraintTop_toBottomOf="@id/iv_parcel"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="$1403 USD"
+            android:textColor="@color/color_green"
+            android:textAlignment="center"
+            android:textSize="28sp"
+            android:fontFamily="@font/nunito_sans_medium"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_total_estimated"
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_amount_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/estimated_amount_info"
+            android:textColor="@color/text_color_gray"
+            android:textAlignment="center"
+            android:textSize="18sp"
+            android:fontFamily="@font/nunito_sans_regular"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_amount"
+            />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_back_home"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_rounded_accent_20dp"
+            android:elevation="0dp"
+            android:text="@string/back_to_home"
+            android:textAllCaps="false"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_amount_info"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

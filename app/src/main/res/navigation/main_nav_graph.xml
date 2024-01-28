@@ -9,20 +9,50 @@
         android:id="@+id/homeFragment"
         android:name="com.ifechukwu.movemate.ui.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            />
+    </fragment>
     <fragment
         android:id="@+id/calculateFragment"
         android:name="com.ifechukwu.movemate.ui.CalculateFragment"
         android:label="fragment_calculate"
-        tools:layout="@layout/fragment_calculate" />
+        tools:layout="@layout/fragment_calculate" >
+        <action
+            android:id="@+id/action_calculateFragment_to_statusFragment"
+            app:destination="@id/statusFragment" />
+        <action
+            android:id="@+id/action_calculateFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/shipmentFragment"
         android:name="com.ifechukwu.movemate.ui.ShipmentFragment"
         android:label="fragment_shipment"
-        tools:layout="@layout/fragment_shipment" />
+        tools:layout="@layout/fragment_shipment" >
+        <action
+            android:id="@+id/action_shipmentFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.ifechukwu.movemate.ui.ProfileFragment"
         android:label="fragment_profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/statusFragment"
+        android:name="com.ifechukwu.movemate.ui.StatusFragment"
+        android:label="StatusFragment"
+        tools:layout="@layout/fragment_status" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.ifechukwu.movemate.ui.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search" />
 </navigation>

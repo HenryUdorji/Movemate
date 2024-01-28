@@ -1,60 +1,80 @@
 package com.ifechukwu.movemate.ui
 
+import android.content.Context
+import android.content.res.ColorStateList
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
+import com.google.android.material.chip.Chip
+import com.google.android.material.chip.ChipGroup
+import com.google.android.material.chip.ChipGroup.OnCheckedStateChangeListener
 import com.ifechukwu.movemate.R
+import com.ifechukwu.movemate.databinding.FragmentCalculateBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [CalculateFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class CalculateFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentCalculateBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_calculate, container, false)
+        binding = FragmentCalculateBinding.inflate(layoutInflater)
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment CalculateFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            CalculateFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val categories =
+            listOf("Documents", "Glass", "Liquid", "Food", "Electronic", "Product", "Others")
+
+        categories.map { category ->
+            binding.cgCategories.addChip(requireContext(), category)
+        }
+
+        //Animate the EditText Fields
+        binding.linearSender.startAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.slide_in_child_bottom))
+        binding.linearReceiver.startAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.slide_in_child_bottom))
+        binding.linearWeight.startAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.slide_in_child_bottom))
+        binding.tvPackagingLabel.startAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.slide_in_child_bottom))
+        binding.tvPackagingSubtitle.startAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.slide_in_child_bottom))
+        binding.linearBox.startAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.slide_in_child_bottom))
+        binding.btnCalculate.startAnimation(AnimationUtils.loadAnimation(requireContext(), R.anim.slide_in_child_bottom))
+
+        binding.btnCalculate.setOnClickListener {
+            findNavController().navigate(R.id.action_calculateFragment_to_statusFragment)
+        }
+
+        binding.ivBack.setOnClickListener {
+            findNavController().navigate(R.id.action_calculateFragment_to_homeFragment)
+        }
+    }
+}
+
+/**
+ * This extension allows for easy creation and adding
+ * of chips to the chip group
+ */
+fun ChipGroup.addChip(context: Context, label: String) {
+    Chip(context).apply {
+        id = View.generateViewId()
+        text = label
+        isClickable = true
+        isFocusable = true
+        isCheckable = true
+        checkedIcon = null
+        chipCornerRadius = 10f
+        chipStrokeWidth = 3f
+        chipStrokeColor = ColorStateList.valueOf(ContextCompat.getColor(context, R.color.chip_checked_color))
+        chipBackgroundColor = resources.getColorStateList(R.color.chip_color_state, null)
+        setTextColor(resources.getColorStateList(R.color.chip_text_color_state, null))
+
+        addView(this)
+        startAnimation(AnimationUtils.loadAnimation(context, R.anim.slide_in_right))
     }
 }
